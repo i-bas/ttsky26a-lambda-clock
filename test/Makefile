@@ -6,7 +6,14 @@ SIM ?= icarus
 FST ?= -fst # Use more efficient FST format
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = project.v
+PROJECT_SOURCES = \
+src/tt_um_ibas_clock_alarm.v \
+src/top_module.v \
+src/time_calendar_core.v \
+src/clock_divider.v \
+src/button_debounce.v \
+src/display_scanner.v \
+src/hc595_driver.v
 
 ifneq ($(GATES),yes)
 
