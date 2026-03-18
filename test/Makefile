@@ -13,7 +13,9 @@ src/time_calendar_core.v \
 src/clock_divider.v \
 src/button_debounce.v \
 src/display_scanner.v \
-src/hc595_driver.v
+src/hc595_driver.v \
+src/alarm_module.v \
+sec/counter_4digit.v
 
 ifneq ($(GATES),yes)
 
