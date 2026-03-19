@@ -7,16 +7,15 @@ FST ?= -fst # Use more efficient FST format
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
 PROJECT_SOURCES = \
-src/tt_um_ibas_clock_alarm.v \
-src/top_module.v \
-src/time_calendar_core.v \
-src/clock_divider.v \
-src/button_debounce.v \
-src/display_scanner.v \
-src/hc595_driver.v \
-src/alarm_module.v \
-src/counter_4digit.v \
-src/project.v
+tt_um_ibas_clock_alarm.v \
+top_module.v \
+time_calendar_core.v \
+clock_divider.v \
+button_debounce.v \
+display_scanner.v \
+hc595_driver.v \
+alarm_module.v \
+counter_4digit.v
 
 ifneq ($(GATES),yes)
 
