@@ -15,7 +15,8 @@ src/button_debounce.v \
 src/display_scanner.v \
 src/hc595_driver.v \
 src/alarm_module.v \
-sec/counter_4digit.v
+src/counter_4digit.v
+src/project.v
 
 ifneq ($(GATES),yes)
 
