@@ -1,0 +1,44 @@
+`default_nettype none
+
+module tt_um_ibas_clock_alarm (
+    input  wire [7:0] ui_in,
+    output wire [7:0] uo_out,
+    input  wire [7:0] uio_in,
+    output wire [7:0] uio_out,
+    output wire [7:0] uio_oe,
+    input  wire       ena,
+    input  wire       clk,
+    input  wire       rst_n
+);
+
+    wire sclk;
+    wire rclk;
+    wire dio;
+    wire buzzer;
+
+    top_module u_top (
+        .clk(clk),
+        .btn_rst(~rst_n),
+        .btn_pause(ui_in[0]),
+        .btn_dec(ui_in[1]),
+        .btn_inc(ui_in[2]),
+        .sclk(sclk),
+        .rclk(rclk),
+        .dio(dio),
+        .buzzer(buzzer)
+    );
+
+    assign uo_out[0] = sclk;
+    assign uo_out[1] = rclk;
+    assign uo_out[2] = dio;
+    assign uo_out[3] = buzzer;
+    assign uo_out[7:4] = 4'b0000;
+
+    assign uio_out = 8'b00000000;
+    assign uio_oe  = 8'b00000000;
+
+    wire _unused = &{1'b0, ena, uio_in, ui_in[7:3]};
+
+endmodule
+
+`default_nettype wire
